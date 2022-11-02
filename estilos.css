@@ -12,3 +12,20 @@ body {
     text-align: center;
     padding: 20px 0px;
 }
+
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    border: 10px solid #000;
+    margin: auto;/* centra el elemento */
+    font-size: 50px;
+    line-height: 50px;
+    text-align: center;/* centra el texto */
+    
+}
+.contenedor > div {
+    display: block;/* abarque todo el espacio disponible */
+    background-color: #2f89fc;
+    padding: 20px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.23); /* sombreado */
+}
