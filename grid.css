@@ -2,9 +2,8 @@
     color: white;
     display: grid;
     grid-gap: 20px;
-    
-    /* indica el minimo y maximo de un elemento */
-    grid-template-columns: minmax(300px, 1fr) 1fr;
+    /* facilita repetir el mismo parametro  */
+    grid-template-columns: 200px repeat(6, 1fr);
 
-    grid-template-rows: minmax(150px, auto) 400px;
+    grid-template-rows: repeat(3, 1fr);
 }
