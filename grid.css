@@ -3,46 +3,51 @@
     display: grid;
     grid-gap: 20px;
     
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-rows: repeat(4, auto);
+    /* da una estructura de los elementos, que permite ordenar de una forma mas sencilla */
+    grid-template-areas:    "header     header      header"
+                            "sidebar-1  contenido   sidebar-2"
+                            "sidebar-1  widgets     sidebar-2"
+                            "footer     footer      footer";
 }
 
 .contenedor .item {
     background-color: #ff8000;
+    grid-column-start: header;
+    grid-column-end: header;
+}
+.contenedor .sidebar-1{
+    background-color: #393e46;
+    
+    /* forma 1 */
+    /*  grid-column-start: sidebar-1;
+        grid-column-end: sidebar-1;
+        grid-row-start: sidebar-1;
+        grid-row-end: sidebar-1; */
 
-    /* organiza el posicionamiento */
+    /* forma 2 */
+    /*  grid-column: sidebar-1;
+        grid-row: sidebar-1; */
 
-    grid-column-start: 1;
-    grid-column-end: 4;
-
-    /*? ----------------------------------------------- */
-    /* donde comienza*/
-        /* grid-column-start: 1; */
-    /* donde termina, ocupa los elememtos */
-        /* grid-column-end: 5; */
-    /*? ------------------------------------------------- */
-
-    /*? acepta numeros negativos, que tomando valores del final de la fila */
-        /* grid-column-start: 1; */
-        /* grid-column-end: -3; */
-
-    /*?  filas */
-        /* grid-row-start: 2; */
-        /* grid-row-end: 9; */
-
-    /*? una forma mas corta */
-        /* grid-column: 1 / -2; */
-        /* grid-row: 2 / 4; */
-
-    /*? forma aun mas corta
-            Primer Parametro: grid-row-start
-            Segundo Parametro: grid-column-start
-            Tercer Parametro: grid-row-end
-            Cuarto Parametro: grid-column-and */
-        /* grid-area: 2 / 1 / 4 / -2; */
-
-    /*? Span */
-    /* lo que hace span es indicar cuantas casillas queremos ocupar */
-    grid-column: span 3;
-    grid-row: 3 / span 2;
+    /* forma 3 */
+    grid-area: sidebar-1;
+}
+.contenedor .contenido{
+    background-color: #fff;
+    color: #000;
+    grid-area: contenido;
+}
+.contenedor .widgets{
+    background-color: #ff8000;
+    grid-area: widgets;
+}
+.contenedor .sidebar-2{
+    background-color: #393e46;
+    grid-area: sidebar-2;
+}
+.contenedor .footer{
+    background-color: #222831;
+    grid-area: footer;
 }
