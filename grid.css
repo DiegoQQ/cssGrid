@@ -4,50 +4,19 @@
     grid-gap: 20px;
     
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 200px);
 
-    grid-template-rows: repeat(4, auto);
-    /* da una estructura de los elementos, que permite ordenar de una forma mas sencilla */
-    grid-template-areas:    "header     header      header"
-                            "sidebar-1  contenido   sidebar-2"
-                            "sidebar-1  widgets     sidebar-2"
-                            "footer     footer      footer";
-}
 
-.contenedor .item {
-    background-color: #ff8000;
-    grid-column-start: header;
-    grid-column-end: header;
-}
-.contenedor .sidebar-1{
-    background-color: #393e46;
+    /* avarca el espacio necesario horizontalmente
+    existen diferentes valores: auto, stretch, center, end, start */
+    justify-items: center;
     
-    /* forma 1 */
-    /*  grid-column-start: sidebar-1;
-        grid-column-end: sidebar-1;
-        grid-row-start: sidebar-1;
-        grid-row-end: sidebar-1; */
-
-    /* forma 2 */
-    /*  grid-column: sidebar-1;
-        grid-row: sidebar-1; */
-
-    /* forma 3 */
-    grid-area: sidebar-1;
+    /* avarca el espacio necesario verticalmente */
+    align-items: center;
 }
-.contenedor .contenido{
-    background-color: #fff;
-    color: #000;
-    grid-area: contenido;
-}
-.contenedor .widgets{
+.contenedor .items{
     background-color: #ff8000;
-    grid-area: widgets;
-}
-.contenedor .sidebar-2{
-    background-color: #393e46;
-    grid-area: sidebar-2;
-}
-.contenedor .footer{
-    background-color: #222831;
-    grid-area: footer;
+
+    justify-self: start;
+    align-self: end;
 }
