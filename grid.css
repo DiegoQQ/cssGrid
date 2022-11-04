@@ -2,21 +2,19 @@
     color: white;
     display: grid;
     grid-gap: 20px;
+    height: 700px;
     
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 200px);
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
 
 
-    /* avarca el espacio necesario horizontalmente
-    existen diferentes valores: auto, stretch, center, end, start */
-    justify-items: center;
+    /* Alinea Horizontalmente
+    ademas de los clasicos: auto, end, start, center, stretch; tenemos otros:
+    space-around, space-between, space-evenly */
+    justify-content: space-evenly;
+
+
+    /* Alinear verticalmente */
+    align-content: space-between;
     
-    /* avarca el espacio necesario verticalmente */
-    align-items: center;
-}
-.contenedor .items{
-    background-color: #ff8000;
-
-    justify-self: start;
-    align-self: end;
 }
