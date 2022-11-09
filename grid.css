@@ -2,19 +2,29 @@
     color: white;
     display: grid;
     grid-gap: 20px;
-    height: 700px;
     
-    grid-template-columns: repeat(3, 150px);
-    grid-template-rows: repeat(3, 150px);
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: 200px 100px 200px;
 
 
-    /* Alinea Horizontalmente
-    ademas de los clasicos: auto, end, start, center, stretch; tenemos otros:
-    space-around, space-between, space-evenly */
-    justify-content: space-evenly;
+    /* Grid implicita
+    ? da valores por defecto a las grid que no tengan nada */
+        /* grid-auto-rows: 400px; */
+
+    /* Es el automatico de las columnas, no hace nada si no se tiene (grid-auto-flow: column) */
+    grid-auto-columns: 200px;
 
 
-    /* Alinear verticalmente */
-    align-content: space-between;
-    
+    /* existe diferentes valores: row (es por defecto), column (cambia el orden en columnas), dense ( acomoda los objetos para qiue no tengan espacios ) */
+    grid-auto-flow: row dense;
+}
+
+.contenedor .span2{ 
+    grid-column: span 2;/* le dice cuantos espacios va a ocupar */
+    grid-row: span 2;
+    background-color: #ff8000;
+}
+.contenedor .span3{
+    grid-column: span 3;
+    background-color: #575757;
 }
