@@ -3,28 +3,9 @@
     display: grid;
     grid-gap: 20px;
     
-    grid-template-columns: 200px 1fr 200px;
-    grid-template-rows: 200px 100px 200px;
+    /*? auto-fill va a rellenar toda nuestra fila, con todas las columnas que tenga adentro y deja espacios */
+        /* grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); */
 
-
-    /* Grid implicita
-    ? da valores por defecto a las grid que no tengan nada */
-        /* grid-auto-rows: 400px; */
-
-    /* Es el automatico de las columnas, no hace nada si no se tiene (grid-auto-flow: column) */
-    grid-auto-columns: 200px;
-
-
-    /* existe diferentes valores: row (es por defecto), column (cambia el orden en columnas), dense ( acomoda los objetos para qiue no tengan espacios ) */
-    grid-auto-flow: row dense;
-}
-
-.contenedor .span2{ 
-    grid-column: span 2;/* le dice cuantos espacios va a ocupar */
-    grid-row: span 2;
-    background-color: #ff8000;
-}
-.contenedor .span3{
-    grid-column: span 3;
-    background-color: #575757;
+    /*? auto-fit va a rellenar toda nuestra fila, con todas las columnas y no  deja espacios */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
